@@ -4,6 +4,24 @@
 // longText (a String with several words in it)
 // numWords (an Integer that sets the number of words you want in the returned text)
 
+// What I did:
+// Split the string into an array separated by spaces between the words to keep whole words intact.  
+// Determine the number of words to delete from longText.
+// Delete excess words from end of 'words'
+// Add an ellipses to end of 'words'
+// Convert the array back into a string and return result.
+
+var truncateWords = function(longText, numWords) {
+  var words = longText.split(' ');
+  var numberOfWords = words.length;
+  var numWordsToRemove = numberOfWords - numWords;
+  words.splice(numWords, numWordsToRemove); 
+  var newWords = words.concat('...');
+  var newSentence = newWords.join(' ');
+  return newSentence;
+}
+
+
 // TODO: Within the truncateWords() Function, complete the following steps:
 // 1. Use the split() function to split the String into an Array
 // 2. Use the length attribute to find the number of words in the Array
